@@ -1,0 +1,16 @@
+.output-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; // Center content vertically
+
+h2 {
+  margin-bottom: 20px;
+}
+
+  p {
+    font-size: 1.1em;
+    margin: 10px 0;
+  }
+}

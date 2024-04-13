@@ -8,13 +8,16 @@ import { DataService } from '../data.service';
   styleUrls: ['./input-page.component.scss']
 })
 export class InputPageComponent {
-  costOfService: number;
-  serviceQuality: number;
+  costOfService: number = 0;
+  serviceQuality: number = 0.5;
   roundUpTip: boolean = false;
 
   constructor(private dataService: DataService, private router: Router) {}
 
   calculateTip() {
+    if (this.costOfService <= 0) {
+      alert("Please enter a valid cost of service.");
+      return;}
     const tip = this.costOfService * this.serviceQuality;
     const totalTip = this.roundUpTip ? Math.ceil(tip) : Math.round(tip * 100) / 100;
     const totalBill = this.costOfService + totalTip;
